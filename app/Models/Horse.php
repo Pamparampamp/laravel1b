@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Horse extends Model
 {
     use HasFactory;
-    protected $fillabe =['name','runs','wins','about'];
+    public $fillable = [ 'name','runs','wins','about'];
 
     public function betters()
     {

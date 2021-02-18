@@ -6,11 +6,11 @@
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
 
-            <h2>Add horses</h2>
+            <h2>Add betters</h2>
         </div>
           <div class="pull-right">
 
-            <a class="btn btn-primary"href="{{ route('horses.index') }}">Back</a>
+            <a class="btn btn-primary"href="{{ route('betters.index') }}">Back</a>
         </div>
 
     </div>
@@ -29,32 +29,34 @@
     </div>
     @endif --}}
 
-    <form action="{{ route('horses.store') }}" method="POST">
+    <form action="{{ route('betters.update', $better->id) }}" method="POST">
     @csrf
+
+@method('PUT')
         <div class="row">
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong> Name </strong>
-                    <input type="text" class="form-control" name="name" placeholder="name">
+                    <input type="text" class="form-control" value="{{ $better->name }}" name="name" placeholder="name">
                 </div>
             </div>
              <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Runs </strong>
-                    <input type="text" class="form-control" name="runs" placeholder="runs">
+                    <strong>Surname </strong>
+                    <input type="text" class="form-control" value="{{ $better->surname }}" name="surname" placeholder="runs">
                 </div>
             </div>
              <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Wins </strong>
-                    <input type="text" class="form-control" name="wins" placeholder="wins">
+                    <strong>Bets </strong>
+                    <input type="text" class="form-control" value="{{ $better->bet }}" name="bet" placeholder="wins">
                 </div>
             </div>
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>About </strong>
-                    <input type="text" class="form-control" name="about" placeholder="about">
+                    <strong>Horse_id </strong>
+                    <input type="text" class="form-control" value="{{ $better->horse_id }}" name="horse_id" placeholder="about">
                 </div>
             </div>
 

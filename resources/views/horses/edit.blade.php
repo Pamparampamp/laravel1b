@@ -29,32 +29,34 @@
     </div>
     @endif --}}
 
-    <form action="{{ route('horses.store') }}" method="POST">
+    <form action="{{ route('horses.update', $horse->id) }}" method="POST">
     @csrf
+
+@method('PUT')
         <div class="row">
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong> Name </strong>
-                    <input type="text" class="form-control" name="name" placeholder="name">
+                    <input type="text" class="form-control" value="{{ $horse->name }}" name="name" placeholder="name">
                 </div>
             </div>
              <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Runs </strong>
-                    <input type="text" class="form-control" name="runs" placeholder="runs">
+                    <input type="text" class="form-control" value="{{ $horse->runs }}" name="runs" placeholder="runs">
                 </div>
             </div>
              <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Wins </strong>
-                    <input type="text" class="form-control" name="wins" placeholder="wins">
+                    <input type="text" class="form-control" value="{{ $horse->wins }}" name="wins" placeholder="wins">
                 </div>
             </div>
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>About </strong>
-                    <input type="text" class="form-control" name="about" placeholder="about">
+                    <input type="text" class="form-control" value="{{ $horse->about }}" name="about" placeholder="about">
                 </div>
             </div>
 

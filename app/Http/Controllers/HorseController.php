@@ -37,18 +37,26 @@ class HorseController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $request->validate([
+        // //
+        // $request->validate([
 
-            'name'=>'required',
-            'runs'=>'required',
-            'wins'=>'required',
-            'about'=>'required'
+        //     'name'=>'required',
+        //     'runs'=>'required',
+        //     'wins'=>'required',
+        //     'about'=>'required'
 
-        ]);
-        Horse::create($request->all());
-        return redirect()->route('horses.index')
-        ->with('success', 'Horse has successfully edited');
+        // ]);
+        // Horse::create($request->all());
+        // return redirect()->route('horses.index')
+        // ->with('success', 'Horse has successfully edited');
+
+//
+                $horse = new Horse();
+        // can be used for seeing the insides of the incoming request
+        // dd($request->all()); die();
+        $horse->fill($request->all());
+        $horse->save();
+        return redirect()->route('horses.index');
     }
 
     /**
@@ -71,6 +79,9 @@ class HorseController extends Controller
     public function edit(Horse $horse)
     {
         //
+
+        return view('horses.edit', ['horse' => $horse]);
+
     }
 
     /**
@@ -83,6 +94,10 @@ class HorseController extends Controller
     public function update(Request $request, Horse $horse)
     {
         //
+        $request->validate([]);
+        $horse->update($request->all());
+        return redirect()->route('horses.index')
+        ->with('success', 'Horse updated successfully');
     }
 
     /**

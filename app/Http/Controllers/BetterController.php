@@ -15,6 +15,7 @@ class BetterController extends Controller
     public function index()
     {
         //
+        return view('betters.index', ['betters' => Better::orderBy('name')->get()]);
     }
 
     /**
@@ -24,7 +25,8 @@ class BetterController extends Controller
      */
     public function create()
     {
-        //
+        //  return view('horses.create');
+          return view('betters.create');
     }
 
     /**
@@ -36,6 +38,13 @@ class BetterController extends Controller
     public function store(Request $request)
     {
         //
+
+                  $better = new Better();
+        // can be used for seeing the insides of the incoming request
+        // dd($request->all()); die();
+        $better->fill($request->all());
+        $better->save();
+        return redirect()->route('betters.index');
     }
 
     /**
@@ -58,6 +67,7 @@ class BetterController extends Controller
     public function edit(Better $better)
     {
         //
+        return view('betters.edit', ['better' => $better]);
     }
 
     /**
@@ -70,6 +80,10 @@ class BetterController extends Controller
     public function update(Request $request, Better $better)
     {
         //
+          $request->validate([]);
+        $better->update($request->all());
+        return redirect()->route('betters.index')
+        ->with('success', 'better updated successfully');
     }
 
     /**
@@ -80,6 +94,8 @@ class BetterController extends Controller
      */
     public function destroy(Better $better)
     {
-        //
+          $better->delete();
+        return redirect()->route('betters.index')
+        ->with('success', 'better deleted successfully');
     }
 }
