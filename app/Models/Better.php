@@ -10,7 +10,7 @@ class Better extends Model
     use HasFactory;
     public $fillabe =['name', 'surname','bet','horse_id'];
 
-    public function horses()
+    public function horse()
     {
         return $this->belongsTo('App\Models\Horse');
     }

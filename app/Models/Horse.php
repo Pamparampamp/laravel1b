@@ -10,7 +10,7 @@ class Horse extends Model
     use HasFactory;
     public $fillable = [ 'name','runs','wins','about'];
 
-    public function betters()
+    public function better()
     {
         return $this->hasMany('App\Models\Better');
     }
