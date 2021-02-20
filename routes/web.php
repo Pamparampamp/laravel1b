@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 Route::resource('horses', App\Http\Controllers\HorseController::class);
 Route::resource('betters', App\Http\Controllers\BetterController::class);
-
+Route::get('betters/{id}/travel', [App\Http\Controllers\BetterController::class, 'travel'])->name('better.travel');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

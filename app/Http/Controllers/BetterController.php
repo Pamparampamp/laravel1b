@@ -92,6 +92,10 @@ class BetterController extends Controller
      * @param  \App\Models\Better  $better
      * @return \Illuminate\Http\Response
      */
+        public function travel($id){
+$better = Better::find($id);
+return view('betters.travel', ['better' => $better]);
+}
     public function destroy(Better $better)
     {
           $better->delete();

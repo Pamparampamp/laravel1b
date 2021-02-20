@@ -100,6 +100,8 @@ class HorseController extends Controller
         ->with('success', 'Horse updated successfully');
     }
 
+
+
     /**
      * Remove the specified resource from storage.
      *

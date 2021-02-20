@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Better extends Model
 {
     use HasFactory;
-    public $fillabe =['name', 'surname','bet','horse_id'];
+    public $fillable =['name', 'surname','bet','horse_id'];
 
     public function horse()
     {

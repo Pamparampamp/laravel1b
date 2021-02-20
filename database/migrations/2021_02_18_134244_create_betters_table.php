@@ -14,11 +14,11 @@ class CreateBettersTable extends Migration
     public function up()
     {
         Schema::create('betters', function (Blueprint $table) {
-            $table->integer('id');
+            $table->id();
             $table->string('name',100);
             $table->string('surname',150);
             $table->decimal('bet', 7, 2);
-            $table->integer('horse_id')->length(11);
+            $table->bigInteger('horse_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('horse_id')->references('id')->on('horses');
         });

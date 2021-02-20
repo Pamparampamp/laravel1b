@@ -14,7 +14,7 @@ class CreateHorsesTable extends Migration
     public function up()
     {
         Schema::create('horses', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->id();
             $table->string('name',100);
             $table->tinyInteger('runs')->lenght(4);
             $table->tinyInteger('wins')->lenght(4);

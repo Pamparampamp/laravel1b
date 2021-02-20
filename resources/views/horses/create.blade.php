@@ -51,10 +51,11 @@
                     <input type="text" class="form-control" name="wins" placeholder="wins">
                 </div>
             </div>
-              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>About </strong>
-                    <input type="text" class="form-control" name="about" placeholder="about">
+                    <textarea id="mce" name="about" rows=10 cols=100 class="form-control"></textarea>
+
                 </div>
             </div>
 

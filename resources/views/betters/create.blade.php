@@ -58,6 +58,17 @@
                 </div>
             </div>
 
+            {{-- <label>Keliaus į: </label>
+            <select name="horses_id" id="" class="form-control">
+            <option value="" selected disabled>Pasirinkite šalį</option>
+            @foreach ($horses as $horse)
+            <option value="{{ $horse->id }}">{{ $horse->name }}</option>
+            @endforeach
+            </select> --}}
+
+
+
+
              <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Submit</button>

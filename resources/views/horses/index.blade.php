@@ -6,6 +6,7 @@
 <table class="table">
   <thead>
     <tr>
+         <th scope="col">Horse_id</th>
       <th scope="col">Name</th>
       <th scope="col">Runs</th>
       <th scope="col">Wins</th>
@@ -18,10 +19,11 @@
 
 
     <tr>
+         <th scope="row">{{ $horse->id }}</th>
       <th scope="row">{{ $horse->name }}</th>
       <td scope="row">{{ $horse->runs }}</td>
       <td scope="row">{{ $horse->wins }}</td>
-      <td scope="row">{{ $horse->about}}</td>
+      <td scope="row">{!! $horse->about!!}</td>
        <td>
             <form action="{{ route('horses.destroy', $horse->id) }}" method="post">
 
